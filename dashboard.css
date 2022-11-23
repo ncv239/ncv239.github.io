@@ -101,7 +101,10 @@ body {
 div.bootstrap-select * {
     font-size: 14px;
 }
-
+/* Decrease size of the search toolbar */
+#search-place {
+  font-size: 14px;
+}
 
 /* 
  * Hack to move tick from right to left in the bootstrap-select
