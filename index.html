@@ -16,43 +16,54 @@
         <link href="dashboard.css" rel="stylesheet">
     </head>
     <body class="bg-light">
-        <header class="navbar sticky-top flex-md-nowrap shadow px-10">
-            <div class="col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                <img src="header_logo.png">
-                <span class="fw-bold fs-5 text-uppercase">Hessisches Heimverzeichnis</span>
+        <header class="navbar sticky-top flex-md-nowrap shadow px-10 d-flex flex-wrap align-items-center justify-content-start">
+            <div class="navbar-brand w-50 mx-1 my-1">
+                <img class="d-none d-sm-inline-block" src="header_logo.png" height="30">
+                <span class="fw-bold fs-4 text-uppercase">Hessisches Heimverzeichnis</span>
             </div>
-
-            <form class="col-3 mb-3 mb-lg-0 me-lg-3 text-end" role="search">
-                <input type="search" class="form-control"
+            <div class="nav-item text-nowrap w-100 mx-1 my-1">
+                <form class="form-inline" role="search">
+                    <input type="search" class="form-control"
                     placeholder="Suche nach Einrichtungsname" aria-label="Suche nach Einrichtungsname"
                     list="organisation-names"
                     id="organisation-names-input">
-                <datalist id="organisation-names"></datalist>
-            </form>
-
-            <div class="col-lg-auto col-md-3 me-lg-3 text-end">
-                <button type="button" class="btn btn-primary">Neue Einrichtung</button>
+                    <datalist id="organisation-names"></datalist>
+                </form>
             </div>
-                
-            <div class="dropdown text-end">
-                <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                <img src="https://yt3.ggpht.com/ytc/AMLnZu_8E2fVaNH2D20xn32ph9axohUCgWaLpXO_tXJ14g=s900-c-k-c0x00ffffff-no-rj"
-                    alt="mdo" class="rounded-circle" width="32" height="32">
-                </a>
-                <ul class="dropdown-menu dropdown-menu-end text-small">
-                    <li><a class="dropdown-item" href="#">Settings</a></li>
-                    <li><a class="dropdown-item" href="#">Profile</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#">Sign out</a></li>
-                </ul>
+            <div class="nav-item text-nowrap w-25 mx-1 my-1 d-md-none">
+                <button class="navbar-toggler w-100 collapsed"
+                    type="button" data-bs-toggle="collapse"
+                    data-bs-target="#sidebarMenu"
+                    aria-controls="sidebarMenu"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+            <div class="nav-item text-nowrap w-50 mx-1 my-1">
+                <button type="button" class="btn btn-secondary w-100">Neue Einrichtung</button>
+            </div>
+            <div class="nav-item text-nowrap mx-1 my-1 w-auto text-end">
+                <div class="w-100 dropdown">
+                    <a href="#" class="link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="https://yt3.ggpht.com/ytc/AMLnZu_8E2fVaNH2D20xn32ph9axohUCgWaLpXO_tXJ14g=s900-c-k-c0x00ffffff-no-rj"
+                        alt="mdo" class="rounded-circle" width="32" height="32">
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end text-small">
+                        <li><a class="dropdown-item" href="#">Settings</a></li>
+                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Sign out</a></li>
+                    </ul>
+                </div>
             </div>
         </header>
 
         <div class="container-fluid">
             <div class="row">
-                <nav id="sidebarMenu" class="col-md-3 col-lg-3 d-md-block sidebar collapse bg-white">
+                <nav id="sidebarMenu" class="col-md-4 col-lg-3 d-md-block sidebar collapse bg-white">
                     <div class="position-sticky pt-3 sidebar-sticky px-1">
-                        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3">
+                        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 mt-xs-5">
                             <span class="fs-4 fw-bold">Filter</span>
                             <button type="button" class="btn btn-sm btn-outline-secondary" onclick="clearAllFilters()">Filter zurücksetzen</button>
                         </div>
@@ -71,14 +82,6 @@
                                 title="Alle Träger (Keine Einschränkung)"
                                 multiple data-live-search="true"
                                 onchange="toggleCustomTableFilter()">
-                                <!-- <option data-tokens="1">AWO Perspektiven gGmbH</option>
-                                <option data-tokens="2">CarutiasgGmbH</option>
-                                <option data-tokens="3">Caritas gGmbH</option>
-                                <option data-tokens="4">Caring-ISP GmbH</option>
-                                <option data-tokens="5">Aktive Pädagogik GmbH</option>
-                                <option data-tokens="6">Antoniushaus gGmbH Internate</option>
-                                <option data-tokens="7">Betreutes Wohnen IEV GmbH</option>
-                                <option data-tokens="8">Daumer Haus gGmbH</option> -->
                             </select>
                         </div>
                         <div class="mb-3">
@@ -183,7 +186,7 @@
                 </div>
                 </nav>
 
-                <main class="col-md-9 ms-sm-auto col-lg-9 px-md-4 pt-4">
+                <main class="col-md-8 ms-sm-auto col-lg-9 px-md-4 pt-2">
                     <h1 class="h2">Liste der Einrichtungen</h1>
                     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                         <span class="text-uppercase">
