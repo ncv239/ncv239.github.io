@@ -13,7 +13,7 @@ body {
   
   .sidebar {
     position: fixed;
-    top: 90; /* Height of navbar */
+    top: 90px; /* Height of navbar */
     /* rtl:raw:
     right: 0;
     */
@@ -97,3 +97,27 @@ body {
   div.form-check {
     z-index: 150;
   }
+
+
+
+/*
+ * decrease font-size of bootstrap-select widget
+ */
+div.bootstrap-select * {
+    font-size: 14px;
+}
+
+
+/* 
+ * Hack to move tick from right to left in the bootstrap-select
+*/
+.bootstrap-select.show-tick .dropdown-menu li.selected a span.check-mark{
+  position: absolute;
+  display: inline-block;
+  left: 10px;
+  margin-top: 3px;
+}
+
+.bootstrap-select.show-tick .dropdown-menu li a span.text {
+  margin-left: 15px;
+}
